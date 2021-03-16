@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    
+    <ion-title>जिल्हा शिक्षण व प्रशिक्षण संस्था , नांदेड</ion-title>
+  </ion-toolbar>
+
+ 
+</ion-header>
+
+<ion-content style="top: 30px;">
+  <div class="" style="border:none;margin-left:10px;margin-right:10px;">
+    <div class="grad p-2">
+      <p class="head_lbl text-white text-center">Login</p>
+    </div>
+  </div>
+  <div class="main_content_div grad1">
+    
+    <form #registration="ngForm">
+      <div>
+        <hr>
+        <ion-input type="email" placeholder="ई-मेल" name="email" #email="ngModel" [(ngModel)]="login.email"
+          required email></ion-input>
+        <div *ngIf="email.invalid && email.touched ">
+          <ion-text color="danger text-center">
+            <h4 style="padding-left: 20px; margin-top: 10px;">कृपया ई-मेल लिहावा</h4>
+          </ion-text>
+        </div>
+
+
+
+
+
+        <ion-input type="text" placeholder="पासवर्ड लिहा " name="password" #password="ngModel"
+          [(ngModel)]="login.password" required></ion-input>
+        <div *ngIf="password.invalid && password.touched ">
+          <ion-text color="danger text-center">
+            <h4 style="padding-left: 20px; margin-top: 10px;">कृपया पासवर्ड लिहावा</h4>
+          </ion-text>
+        </div>
+
+        <ion-button color="danger" (click)="goToHome()"  expand="block" [disabled]="registration.invalid">
+          Sign Up
+        </ion-button>
+      </div>
+
+    </form>
+    <div class="bottom_div">
+      <ion-label (click)="goToRegister()" class="text-white" >New User ? Please <span class="text-danger"> Register</span></ion-label><br>
+      <ion-label (click)="goToReset()" class="text-white">Foeget Password <span class="text-danger"> Reset</span>
+      </ion-label>
+    </div>
+
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+      <div class="m-3" style="border:none;">
+        <div class=" p-2">
+          <p class="head_lbl text-primary text-center">Login Problem Call Below Number</p>
+        </div>
+      </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="danger">
+    <ion-title>Technical Support : 8421333417</ion-title>
+  </ion-toolbar>
+</ion-footer>

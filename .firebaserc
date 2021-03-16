@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "diet-c9d94": {
+      "hosting": {
+        "app": [
+          "diet-c9d94"
+        ]
+      }
+    }
+  }
+}

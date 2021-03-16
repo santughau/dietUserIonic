@@ -1,0 +1,29 @@
+<ion-header>
+<ion-toolbar color="danger">
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+  <ion-title>View All Videos</ion-title>
+</ion-toolbar>
+<ion-toolbar color="danger">
+  <ion-searchbar [(ngModel)]="term" showCancelButton="focus"></ion-searchbar>
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list class="ion-no-padding ">
+
+  <ion-item *ngFor="let item of videos |filter:term" (click)="viewVideo(item.youtube_videoLink)">
+    <ion-thumbnail slot="start" style="width:150px;height:75px;">
+      <img src="https://img.youtube.com/vi/{{item.youtube_videoLink}}/0.jpg" />
+    </ion-thumbnail>
+    <ion-label class="ion-text-wrap">
+      <h2>{{item.youtube_title}}</h2>
+    </ion-label>
+  </ion-item>
+</ion-list>
+<ion-infinite-scroll threshold="10px" (ionInfinite)="getData($event)">
+  <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
+</ion-content>

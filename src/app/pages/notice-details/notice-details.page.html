@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Details </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header color="primary ">
+      <ion-card-title class="text-justify">{{data.notices_title}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+  
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-justify">
+            <span >Date :{{data.notices_date | date}}</span>
+            <hr>
+            <p>{{data.notices_describe}}.</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

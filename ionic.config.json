@@ -1,0 +1,7 @@
+{
+  "name": "kaka",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
